@@ -1,13 +1,6 @@
-:root
-{
-   --text-color: #FFFFFF;
-   --text-size: 60px;
-   --button-color : #093028
-}
-
-html,
 body
 {
+  color: #062d5b;
   position: fixed;
   top: 0;
   left: 0;
@@ -18,69 +11,77 @@ body
 
 .container 
 {
-  background: linear-gradient(-135deg,#093028,#237A57);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #2ee596;
   position: fixed;
   top: 0;
   left: 0;
   width: 100% ;
   height: 100% ;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1 
 {
-  color: var(--text-color);
   text-transform: uppercase;
   text-align: center;
-  font-size: var(--text-size);
+  font-size: 8vh;
+  margin-top: 0;
 }
 
 .content 
 {
   display: flex;
-  flex-direction:column;
-}
-.questionTitle
-{
-  display: block;
+  flex-direction: column;
 }
 
-.buttons 
+.buttons
+{
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.interface
 {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
-  align-items: flex-end;
+  margin-bottom: 10vh;
 }
+
 .buttons a
 {
   width: 90px;
   height: 45px;
-  line-height: 45px;
   border-radius: 10px;
-  border: solid 2px var(--button-color);
-  background: var(--button-color);
-  color: var(--text-color);
   text-decoration: none;
-  text-align: center; 
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: bold;
+  font-size: 5vh;
+  padding: 0.5vh;
+  border: solid 0.5vh #062d5b;
+  box-shadow: 0px 2px 5px 0px rgba(6,45,91,1);
 }
 
-.buttons a:hover,
-.no a:hover,
-.yes a:hover
-{ border: solid 2px var(--button-color);
-  background: #ffffff;
-  color:var(--button-color)
+.buttons a:hover
+{
+  background-color: #2cd189;
 }
 
-
+.buttons a:visited
+{
+  color: #062d5b;
+}
 
 .questions
 {
   text-align: center;
-  font-size: 25px;
-
+  font-size: 5vh;
+  font-weight: bold;
+  margin-bottom: 10vh;
 }
 
 .reponses
@@ -89,6 +90,8 @@ h1
   justify-content: center;
   align-items:center;
   text-align: center;
+  font-size: 5vh;
+  text-decoration: underline;
 }
 
 .reponseN,

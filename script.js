@@ -163,3 +163,29 @@ const nextquestion = () =>
 
 }
 valider.addEventListener('click',nextquestion)
+
+oui.addEventListener('click', () =>
+{
+    oui.style.boxShadow = '0px 0px 5px 0px rgba(6,45,91,1)'
+    oui.style.backgroundColor = '#00ff91'
+    non.style.boxShadow = '0px 2px 5px 0px rgba(6,45,91,1)'
+    non.style.backgroundColor = '#2ee596'
+})
+non.addEventListener('click', () =>
+{
+    non.style.boxShadow = '0px 0px 5px 0px rgba(6,45,91,1)'
+    non.style.backgroundColor = '#00ff91'
+    oui.style.boxShadow = '0px 2px 5px 0px rgba(6,45,91,1)'
+    oui.style.backgroundColor = '#2ee596'
+})
+valider.addEventListener('click', () =>
+{
+    valider.style.boxShadow = '0px 0px 5px 0px rgba(6,45,91,1)'
+    valider.style.backgroundColor = '#00ff91'
+    oui.style.boxShadow = '0px 2px 5px 0px rgba(6,45,91,1)'
+    oui.style.backgroundColor = '#2ee596'
+    non.style.boxShadow = '0px 2px 5px 0px rgba(6,45,91,1)'
+    non.style.backgroundColor = '#2ee596'
+    valider.style.boxShadow = '0px 2px 5px 0px rgba(6,45,91,1)'
+    valider.style.backgroundColor = '#2ee596'
+})
