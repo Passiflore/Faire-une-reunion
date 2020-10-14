@@ -23,29 +23,26 @@ const non = container.querySelector('.non')
 const oui = container.querySelector('.oui')
 const valider = container.querySelector('.valider')
 
-
 // Question
 
 let truecount = 0
 let falsecount = 0
-let yes = 'false'
-let no = 'false'
+let yes = false
 
+
+let reply = 0
+let advanced = false
 
 const affirmative = () =>
  {
-    yes = 'true'
-    no = 'false'
-
+    yes = true
  }
  oui.addEventListener('click',affirmative)
 
 
 const negative = () =>
 {
-    yes = 'false'
-    no ='true'
-
+    yes = false
 }
 non.addEventListener('click',negative)
 
@@ -53,23 +50,23 @@ non.addEventListener('click',negative)
 
 const nextquestion = () =>
 {
-    if (yes == 'true')
-    {
-        truecount++
-    }
+    reply++
+    // if (yes == 'true')
+    // {
+    //     truecount++
+    // }
 
-    if (no == 'true')
-    {
-        falsecount++
-    }
+    // if (no == 'true')
+    // {
+    //     falsecount++
+    // }
 
-
-    if (truecount == 1 && falsecount == 0)
+    if (reply == 1 && yes == true)
     {
         question2.style.display = ("block")
         question1.style.display = ("none")
     }
-    if (truecount == 0 && falsecount == 1)
+    if (reply == 1 && yes == false)
     {
         reponseN.style.display = ("block")
         question1.style.display = ("none")
@@ -78,7 +75,7 @@ const nextquestion = () =>
         valider.style.display = ("none")
     }
 
-    if (truecount == 2 && falsecount == 0)
+    if (reply == 2 && yes == true)
     {
         reponseP.style.display = ("block")
         question2.style.display = ("none")
@@ -87,25 +84,27 @@ const nextquestion = () =>
         valider.style.display = ("none")
     }
 
-    if (truecount == 1 && falsecount == 1)
+    if (reply == 2 && yes == false)
     {
         question3.style.display = ("block")
         question2.style.display = ("none")
     }
 
-    if (truecount == 1 && falsecount == 2)
+    if (reply == 3 && yes == false)
     {
         question4.style.display = ("block")
         question3.style.display = ("none")
+        advanced = false
     }
 
-    if (truecount == 2 && falsecount == 1)
+    if (reply == 3 && yes == true)
     {
         question5.style.display = ("block")
         question3.style.display = ("none")
+        advanced = true
     }
 
-    if (truecount == 1 && falsecount == 3)
+    if (reply == 4 && yes == false)
     {
         reponseN2.style.display = ("block")
         question4.style.display = ("none")
@@ -114,13 +113,13 @@ const nextquestion = () =>
         valider.style.display = ("none")
     }
 
-    if (truecount == 2 && falsecount == 2)
+    if (reply == 4 && yes == true && advanced == false) // gauche NON
     {
         question6.style.display = ("block")
         question4.style.display = ("none")
     }
 
-    if (truecount == 3 && falsecount == 1)
+    if (reply == 4 && yes == true && advanced == true) // droite OUI
     {
         reponseP.style.display = ("block")
         question5.style.display = ("none")
@@ -129,7 +128,7 @@ const nextquestion = () =>
         valider.style.display = ("none")
     }
 
-    if (truecount == 3 && falsecount == 2)
+    if (reply == 5 && yes == true)
     {
         reponseN3.style.display = ("block")
         question6.style.display = ("none")
@@ -138,21 +137,13 @@ const nextquestion = () =>
         valider.style.display = ("none")
     }
 
-    if (truecount == 2 && falsecount == 3)
+    if (reply == 5 && yes == false)
     {
         question7.style.display = ("block")
         question6.style.display = ("none")
     }
 
-    if (truecount == 2 && falsecount == 4)
-    {
-        reponseN4.style.display = ("block")
-        question7.style.display = ("none")
-        non.style.display = ("none")
-        oui.style.display = ("none")
-        valider.style.display = ("none")
-    }
-    if (truecount == 3 && falsecount == 3)
+    if (reply == 6 && yes == true)
     {
         reponseP2.style.display = ("block")
         question7.style.display = ("none")
@@ -161,7 +152,14 @@ const nextquestion = () =>
         valider.style.display = ("none")
     }
 
-
+    if (reply == 6 && yes == false)
+    {
+        reponseN4.style.display = ("block")
+        question7.style.display = ("none")
+        non.style.display = ("none")
+        oui.style.display = ("none")
+        valider.style.display = ("none")
+    }
 
 }
 valider.addEventListener('click',nextquestion)
