@@ -14,7 +14,7 @@ body
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #2ee596;
+  background: #FFFFFF;
   position: fixed;
   top: 0;
   left: 0;
@@ -27,7 +27,7 @@ h1
 {
   text-transform: uppercase;
   text-align: center;
-  font-size: 8vh;
+  font-size: 41px;
   margin-top: 0;
 }
 
@@ -87,12 +87,11 @@ h1
   color: #062D5B;
 }
 
-
 .questions
 {
   text-align: center;
-  font-size: 5vh;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: lighter;
   margin-bottom: 10vh;
 }
 
