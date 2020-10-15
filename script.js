@@ -51,15 +51,6 @@ non.addEventListener('click',negative)
 const nextquestion = () =>
 {
     reply++
-    // if (yes == 'true')
-    // {
-    //     truecount++
-    // }
-
-    // if (no == 'true')
-    // {
-    //     falsecount++
-    // }
 
     if (reply == 1 && yes == true)
     {
